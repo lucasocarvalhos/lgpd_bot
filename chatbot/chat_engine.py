@@ -41,4 +41,4 @@ class LGPDChatBot:
             max_tokens=2032
         )
 
-        return f"Contexto fornecido: {context}\n\nResposta: {response.choices[0].message.content}"
+        return response.choices[0].message.content
