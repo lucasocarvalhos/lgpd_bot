@@ -23,7 +23,8 @@ class LGPDChatBot:
                 "role": "system",
                 "content": """
                     Você é um assistente especialista na Lei Geral de Proteção de Dados (LGPD). 
-                    Responda de forma objetiva com base na legislação brasileira. 
+                    Responda à pergunta do usuário baseando-se ESTRITAMENTE e SOMENTE no contexto fornecido.
+                    Não utilize nenhum conhecimento prévio que você possua sobre a LGPD  
                     Não forneça informações que não estejam diretamente relacionadas à LGPD.
                     """
             },
@@ -40,4 +41,4 @@ class LGPDChatBot:
             max_tokens=2032
         )
 
-        return response.choices[0].message.content
+        return f"Contexto fornecido: {context}\n\nResposta: {response.choices[0].message.content}"
